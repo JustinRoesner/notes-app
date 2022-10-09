@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  /* box-sizing: border-box; */
 }
 
 html {
@@ -27,15 +26,43 @@ header h1 {
 }
 
 footer {
-  position: absolute;
+  clear: both;
+  position: relative;
   text-align: center;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 3rem;
 }
 
 footer p {
   color: rgb(118, 118, 118);
+}
+
+form {
+  position: relative;
+  width: 350px;
+  margin: 30px auto 20px auto;
+  background: rgb(235, 235, 235);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.599);
+  padding: 10px;
+}
+
+.inputTitle {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100;
+  border: none;
+  outline: none;
+  background: rgb(235, 235, 235);
+  padding: 5px;
+  font-size: 1.5em;
+  font-family: inherit;
+  resize: none;
 }
 
 .note {
@@ -58,4 +85,24 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+button {
+  font-size: 1.1em;
+  border: none;
+  float: right;
+  margin-right: 20px;
+  background: rgb(181, 211, 255);
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+}
+
+.deleteButton {
+  background: rgb(181, 211, 255);
+  margin-right: 0px;
+  line-height: 0.5em;
+}
+
+button:hover {
+  background: rgb(180, 179, 179);
 }

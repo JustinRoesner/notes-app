@@ -38,25 +38,29 @@ function CreateNoteForm(props) {
 
   return (
     <div>
-      <form>
+      <form className="Create-Note">
         <input
+          className="inputTitle"
           name="title"
           autoFocus
+          autoComplete="off"
+          onKeyPress={handleKeypress}
           onChange={handleChange}
           value={note.title}
           placeholder="Title"
           ref={inputTitle}
         />
-        <input
-          type="text"
+        <textarea //input
           name="text"
+          autoComplete="off"
           onChange={handleChange}
-          onKeyPress={handleKeypress}
+          onKeyDown={handleKeypress}
           value={note.text}
           placeholder="..."
-          row="3"
+          rows="3"
         />
-        <button onClick={submitNote}>+</button>
+        <br />
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );
