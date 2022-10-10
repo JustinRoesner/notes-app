@@ -1,9 +1,9 @@
 import React from "react";
 
-function Note(props) {
-  function handleClick() {
+const Note = (props) => {
+  const handleClick = () => {
     props.onDelete(props.id);
-  }
+  };
 
   return (
     <div className="note">
@@ -14,6 +14,6 @@ function Note(props) {
       <p>{props.text}</p>
     </div>
   );
-}
+};
 
 export default Note;

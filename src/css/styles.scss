@@ -1,0 +1,202 @@
+$light-header-h1-color: white; //header, h1 = color
+$light-header-background: rgb(51, 140, 255); //header = background
+$light-background: rgb(219, 209, 209); //body, form, textarea = background
+$light-card-background: rgb(235, 225, 225); //body, form, textarea = background
+$light-boxshadow: 0 0 10px 0 rgba(0, 0, 0, 0.599); //header, form, .note = box-shadow
+$light-p-color: rgb(38, 38, 38); //p color
+$light-button-background: rgb(181, 211, 255); //button = background
+$light-hover-background: rgb(180, 179, 179); //hover = background
+
+$dark-header-h1-color: #ffcaca; //header, h1 = color
+$dark-header-background: #493561; //header = background
+$dark-background: #251b37; //body, form, textarea = background
+// $dark-card-background: rgb(17, 16, 16); //body, form, textarea = background
+$dark-card-background: rgb(17, 5, 24); //body, form, textarea = background
+$dark-boxshadow: 0 0 10px 0 #5a4376; //header, form, .note = box-shadow
+$dark-p-color: #deced1; //p color
+$dark-button-background: rgb(131, 87, 131); //button = background
+$dark-hover-background: #ffcaca; //hover = background
+
+.light {
+  .background {
+    background: $light-background;
+    height: 120vh;
+  }
+
+  button {
+    background: $light-button-background;
+  }
+
+  header {
+    background: $light-header-background;
+  }
+
+  h1 {
+    color: $light-header-h1-color;
+  }
+
+  .note h1 {
+    color: $light-p-color;
+  }
+
+  header,
+  form,
+  .note {
+    box-shadow: $light-boxshadow;
+  }
+
+  input,
+  textarea,
+  .note {
+    background: $light-background;
+    color: $light-p-color;
+  }
+
+  p {
+    color: $light-p-color;
+  }
+
+  button:hover {
+    background: $light-hover-background;
+  }
+
+  textarea,
+  form,
+  input,
+  .note {
+    background: $light-card-background;
+  }
+}
+
+.dark {
+  .background {
+    background: $dark-background;
+    height: 120vh;
+  }
+
+  button {
+    background: $dark-button-background;
+  }
+
+  header {
+    background: $dark-header-background;
+  }
+
+  h1 {
+    color: $dark-header-h1-color;
+  }
+
+  .note h1 {
+    color: $dark-p-color;
+  }
+
+  header,
+  form,
+  .note {
+    box-shadow: $dark-boxshadow;
+  }
+
+  input,
+  textarea,
+  .note {
+    background: $dark-background;
+    color: $dark-p-color;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: $dark-p-color;
+  }
+
+  button:hover {
+    background: $dark-hover-background;
+  }
+
+  textarea,
+  form,
+  input,
+  .note {
+    background: $dark-card-background;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin: auto -16px;
+  padding: 16px 32px;
+}
+
+header h1 {
+  font-weight: 250;
+  font-size: 2.5em;
+}
+
+form {
+  position: relative;
+  width: 350px;
+  margin: 30px auto 20px auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.inputTitle {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1.5em;
+  font-family: inherit;
+  resize: none;
+}
+
+.note {
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  margin: 15px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.note p {
+  font-size: 1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+button {
+  font-size: 1.1em;
+  border: none;
+  float: right;
+  margin-right: 20px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+}
+
+.deleteButton {
+  margin-right: 0px;
+  line-height: 0.5em;
+}

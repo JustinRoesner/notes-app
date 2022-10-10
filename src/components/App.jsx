@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Note from "./Note";
-import notesArray from "../notesArray"; //example importing an array
+import notesArray from "../data/notesArray"; //example importing an array
 import CreateNoteForm from "./CreateNoteForm";
+import DarkModeToggle from "./DarkModeToggle";
+import "../css/styles.scss";
 
-function App() {
+const App = () => {
   const [showExample, setShowExample] = useState(false);
   const [notes, setNotes] = useState([]);
   const [arrayNotes, setArrayNotes] = useState([...notesArray]);
+  const [theme, setTheme] = useState("light");
 
   const addNote = (newNote) => {
     setNotes((prevNotes) => {
@@ -43,45 +46,48 @@ function App() {
   };
 
   return (
-    <div>
-      <Header />
+    <div className={theme}>
+      <div className="background">
+        <Header />
 
-      <div style={{ display: "flex" }}>
-        <button
-          style={{ textAlign: "left", marginLeft: "15px" }}
-          onClick={handleExample}
-        >
-          {showExample ? "Hide Example Notes" : "Show Example Notes"}
-        </button>
-      </div>
+        <div style={{ display: "flex" }}>
+          <button
+            style={{ textAlign: "left", marginLeft: "15px" }}
+            onClick={handleExample}
+          >
+            {showExample ? "Hide Example Notes" : "Show Example Notes"}
+          </button>
+          <DarkModeToggle theme={theme} setTheme={setTheme} />
+        </div>
 
-      <CreateNoteForm onAdd={addNote} />
+        <CreateNoteForm onAdd={addNote} />
 
-      {showExample
-        ? arrayNotes.map((x, index) => (
+        {showExample
+          ? arrayNotes.map((x, index) => (
+              <Note
+                key={x.key}
+                id={index}
+                title={x.title}
+                text={x.text}
+                onDelete={deleteArrayNote}
+              />
+            ))
+          : null}
+
+        {notes.map((noteItem, index) => {
+          return (
             <Note
-              key={x.key}
+              key={index}
               id={index}
-              title={x.title}
-              text={x.text}
-              onDelete={deleteArrayNote}
+              title={noteItem.title}
+              text={noteItem.text}
+              onDelete={deleteNote}
             />
-          ))
-        : null}
-
-      {notes.map((noteItem, index) => {
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={noteItem.title}
-            text={noteItem.text}
-            onDelete={deleteNote}
-          />
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

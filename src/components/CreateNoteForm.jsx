@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-function CreateNoteForm(props) {
+const CreateNoteForm = (props) => {
   const inputTitle = useRef(null);
 
   const [note, setNote] = useState({
@@ -8,7 +8,7 @@ function CreateNoteForm(props) {
     text: "",
   });
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
 
     setNote((prevNote) => {
@@ -17,24 +17,24 @@ function CreateNoteForm(props) {
         [name]: value,
       };
     });
-  }
+  };
 
-  function submitNote(e) {
+  const submitNote = (e) => {
     e.preventDefault();
 
     props.onAdd(note);
     setNote(() => {
       return { title: "", text: "" };
     });
-  }
+  };
 
-  function handleKeypress(e) {
+  const handleKeypress = (e) => {
     //submitNote if enter is pressed
     if (e.key === "Enter") {
       inputTitle.current.focus();
       submitNote();
     }
-  }
+  };
 
   return (
     <div>
@@ -64,6 +64,6 @@ function CreateNoteForm(props) {
       </form>
     </div>
   );
-}
+};
 
 export default CreateNoteForm;

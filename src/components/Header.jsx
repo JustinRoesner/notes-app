@@ -1,11 +1,11 @@
 import React from "react";
 
-function Header() {
+const Header = () => {
   return (
     <header>
       <h1>Notes App</h1>
     </header>
   );
-}
+};
 
 export default Header;

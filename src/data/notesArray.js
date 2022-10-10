@@ -7,7 +7,7 @@ let notesArray = [
   {
     key: 2,
     title: "Rent Due",
-    text: "$800 September 25",
+    text: "$800 September 25.",
   },
   {
     key: 3,
@@ -27,7 +27,7 @@ let notesArray = [
   {
     key: 6,
     title: "Watch",
-    text: "Watch new Lord of the Rings",
+    text: "Watch new Lord of the Rings.",
   },
 ];
 
