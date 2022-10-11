@@ -21,6 +21,7 @@ $dark-hover-background: #ffcaca; //hover = background
     transition: all 0.7s;
     background: $light-background;
     height: 120vh;
+    width: 100%;
   }
 
   button {
@@ -73,6 +74,7 @@ $dark-hover-background: #ffcaca; //hover = background
     transition: all 0.7s;
     background: $dark-background;
     height: 120vh;
+    width: 100%;
   }
 
   button {
@@ -188,6 +190,12 @@ textarea {
   word-wrap: break-word;
 }
 
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 button {
   font-size: 1.1em;
   border: none;
@@ -200,4 +208,22 @@ button {
 .deleteButton {
   margin-right: 0px;
   line-height: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .note {
+    width: 100%;
+  }
+
+  .light,
+  .dark {
+    .background {
+      height: 250vh;
+      width: 103%;
+    }
+
+    form {
+      width: 87%;
+    }
+  }
 }

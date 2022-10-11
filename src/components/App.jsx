@@ -10,7 +10,7 @@ const App = () => {
   const [showExample, setShowExample] = useState(false);
   const [notes, setNotes] = useState([]);
   const [arrayNotes, setArrayNotes] = useState([...notesArray]);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   const addNote = (newNote) => {
     setNotes((prevNotes) => {
@@ -62,29 +62,31 @@ const App = () => {
 
         <CreateNoteForm onAdd={addNote} />
 
-        {showExample
-          ? arrayNotes.map((x, index) => (
-              <Note
-                key={x.key}
-                id={index}
-                title={x.title}
-                text={x.text}
-                onDelete={deleteArrayNote}
-              />
-            ))
-          : null}
+        <div className="note-container">
+          {showExample
+            ? arrayNotes.map((x, index) => (
+                <Note
+                  key={x.key}
+                  id={index}
+                  title={x.title}
+                  text={x.text}
+                  onDelete={deleteArrayNote}
+                />
+              ))
+            : null}
 
-        {notes.map((noteItem, index) => {
-          return (
-            <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              text={noteItem.text}
-              onDelete={deleteNote}
-            />
-          );
-        })}
+          {notes.map((noteItem, index) => {
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                text={noteItem.text}
+                onDelete={deleteNote}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
