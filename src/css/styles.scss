@@ -176,6 +176,8 @@ textarea {
   width: 250px;
   margin: 15px;
   float: left;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .note h1 {
@@ -219,7 +221,7 @@ button {
   .dark {
     .background {
       height: 250vh;
-      width: 103%;
+      width: 101.5%;
     }
 
     form {

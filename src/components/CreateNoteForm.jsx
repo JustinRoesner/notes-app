@@ -44,8 +44,12 @@ const CreateNoteForm = (props) => {
           name="title"
           autoFocus
           autoComplete="off"
-          onKeyPress={handleKeypress}
-          onChange={handleChange}
+          // onKeyPress={(e) => {
+          //   handleKeypress(e);
+          // }}
+          onChange={(e) => {
+            handleChange(e);
+          }}
           value={note.title}
           placeholder="Title"
           ref={inputTitle}
@@ -53,14 +57,24 @@ const CreateNoteForm = (props) => {
         <textarea //input
           name="text"
           autoComplete="off"
-          onChange={handleChange}
-          onKeyDown={handleKeypress}
+          onChange={(e) => {
+            handleChange(e);
+          }}
+          onKeyDown={(e) => {
+            handleKeypress(e);
+          }}
           value={note.text}
           placeholder="..."
           rows="3"
         />
         <br />
-        <button onClick={submitNote}>Add</button>
+        <button
+          onClick={(e) => {
+            submitNote(e);
+          }}
+        >
+          Add
+        </button>
       </form>
     </div>
   );
