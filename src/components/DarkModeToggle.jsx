@@ -2,12 +2,8 @@ import React, { useState } from "react";
 
 const DarkModeToggle = (props) => {
   const { theme, setTheme } = props;
-  const [isLightMode, setIsLightMode] = useState(true);
 
   const handleClick = () => {
-    console.log("hi");
-    setIsLightMode(!isLightMode);
-
     if (theme == "light") {
       setTheme("dark");
     } else {
@@ -18,10 +14,10 @@ const DarkModeToggle = (props) => {
   return (
     <button
       onClick={() => {
-        handleClick(isLightMode);
+        handleClick();
       }}
     >
-      {isLightMode ? "🌘" : "🌞"}
+      {theme == "light" ? "🌘" : "🌞"}
     </button>
   );
 };

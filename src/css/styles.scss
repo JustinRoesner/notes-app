@@ -4,21 +4,21 @@ $light-background: rgb(219, 209, 209); //body, form, textarea = background
 $light-card-background: rgb(235, 225, 225); //body, form, textarea = background
 $light-boxshadow: 0 0 10px 0 rgba(0, 0, 0, 0.599); //header, form, .note = box-shadow
 $light-p-color: rgb(38, 38, 38); //p color
-$light-button-background: rgb(181, 211, 255); //button = background
-$light-hover-background: rgb(180, 179, 179); //hover = background
+$light-button-background: rgb(191, 207, 230); //button = background
+$light-hover-background: rgb(177, 176, 176); //hover = background
 
 $dark-header-h1-color: #ffcaca; //header, h1 = color
 $dark-header-background: #493561; //header = background
 $dark-background: #251b37; //body, form, textarea = background
-// $dark-card-background: rgb(17, 16, 16); //body, form, textarea = background
 $dark-card-background: rgb(17, 5, 24); //body, form, textarea = background
-$dark-boxshadow: 0 0 10px 0 #5a4376; //header, form, .note = box-shadow
+$dark-boxshadow: 0 0 20px 0 #5a4376; //header, form, .note = box-shadow
 $dark-p-color: #deced1; //p color
 $dark-button-background: rgb(131, 87, 131); //button = background
 $dark-hover-background: #ffcaca; //hover = background
 
 .light {
   .background {
+    transition: all 0.7s;
     background: $light-background;
     height: 120vh;
   }
@@ -70,6 +70,7 @@ $dark-hover-background: #ffcaca; //hover = background
 
 .dark {
   .background {
+    transition: all 0.7s;
     background: $dark-background;
     height: 120vh;
   }
