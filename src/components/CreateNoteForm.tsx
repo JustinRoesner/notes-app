@@ -1,9 +1,14 @@
 import React, { useState, useRef } from "react";
 
-const CreateNoteForm = (props) => {
-  const inputTitle = useRef(null);
+interface isNote {
+  title: string;
+  text: string;
+}
 
-  const [note, setNote] = useState({
+const CreateNoteForm = (props) => {
+  const inputTitle = useRef<any>(null);
+
+  const [note, setNote] = useState<isNote>({
     title: "",
     text: "",
   });
@@ -32,7 +37,7 @@ const CreateNoteForm = (props) => {
     //submitNote if enter is pressed
     if (e.key === "Enter") {
       inputTitle.current.focus();
-      submitNote();
+      submitNote(e);
     }
   };
 
@@ -44,9 +49,6 @@ const CreateNoteForm = (props) => {
           name="title"
           autoFocus
           autoComplete="off"
-          // onKeyPress={(e) => {
-          //   handleKeypress(e);
-          // }}
           onChange={(e) => {
             handleChange(e);
           }}
@@ -65,7 +67,7 @@ const CreateNoteForm = (props) => {
           }}
           value={note.text}
           placeholder="..."
-          rows="3"
+          rows={3}
         />
         <br />
         <button

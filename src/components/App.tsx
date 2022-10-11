@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Note from "./Note";
+import Header from "./Header.tsx";
+import Note from "./Note.tsx";
 import notesArray from "../data/notesArray"; //example importing an array
-import CreateNoteForm from "./CreateNoteForm";
-import DarkModeToggle from "./DarkModeToggle";
+import CreateNoteForm from "./CreateNoteForm.tsx";
+import DarkModeToggle from "./DarkModeToggle.tsx";
 import "../css/styles.scss";
 
 const App = () => {
-  const [showExample, setShowExample] = useState(false);
-  const [notes, setNotes] = useState([]);
+  const [showExample, setShowExample] = useState<boolean>(false);
+  const [notes, setNotes] = useState<any>([]);
   const [arrayNotes, setArrayNotes] = useState([...notesArray]);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState<string>("dark");
 
   const addNote = (newNote) => {
     setNotes((prevNotes) => {
