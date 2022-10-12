@@ -5,7 +5,7 @@ Website to take notes.
 ## Live Site
 [Website](http://notesapp.justinroesner.com/)
 
-![site screenshot](https://github.com/JustinRoesner/personal-site/blob/master/images/screenshot-for-github.jpg?raw=true)
+![site screenshot](https://github.com/JustinRoesner/notes-app/screenshot/screenshot-notesapp.jpg?raw=true)
 
 ## About Me
 - [My website](https://justinroesner.com/) (JustinRoesner.com)
