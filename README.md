@@ -1,6 +1,6 @@
 # Notes App
 Website to take notes.  
-**React, TypeScript, SCSS** 
+**React, TypeScript, SASS** 
 
 ## Live Site
 [Website](http://notesapp.justinroesner.com/)
